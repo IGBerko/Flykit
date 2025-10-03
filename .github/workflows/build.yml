@@ -28,10 +28,10 @@ jobs:
 
       - name: Build Flykit
         run: |
-          # Собираем flykit.py в бинарник Linux/macOS
           pyinstaller --onefile --name=flykit flykit-installer.py --distpath ./build
-- name: Upload artifacts
-  uses: actions/upload-artifact@v4
-  with:
-    name: flykit-${{ matrix.os }}
-    path: build/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: flykit-${{ matrix.os }}
+          path: build/
